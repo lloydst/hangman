@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var word = ''
-    var pickWord = '<p>player 1 chose your word</p><input type="password"> <input type="submit" value="done">'
+    var pickWord = '<p>player 1 choose your word</p><input type="password"> <input type="submit" value="done">'
     var alphabetstring = 'abcdefghijklmnopqrstuvwxyz'.split('');
     
     //---------------------------------------------------------//
@@ -23,9 +23,9 @@ $(document).ready(function () {
             $('.alphabet').append(htmlalpabet)
         }
     })
-    var wronglogic = 'html in here' 
+    var wronglogic = '<p>these letters where wrong (something here to get wrong letters + represent chances left)</p>' 
     $('.wrong').append(wronglogic)
-    var rightlogic = 'html in here'
+    var rightlogic = '<p> . . . . . . . . . (something to change these dots to the letters)</p>'
     $('.right').append(rightlogic)
             
     
