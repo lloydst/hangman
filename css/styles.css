@@ -1,0 +1,13 @@
+.main-wrapper {
+    background-color: lightblue;
+    text-align: center;
+}
+.alphabet {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.alphabet input {
+    width: 40px;
+    height: 40px;
+}
