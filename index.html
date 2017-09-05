@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./js/jquery-3.2.1.min.js"></script>
-    <script src="./js/index.js"></script>
-
     <link rel="stylesheet" href="./css/styles.css">
     <title>Document</title>
     
 </head>
 <body>
-    <div class="main-wrapper">
-        <h1>hangman!</h1>
-        <form  id="target">
-            <div class="pick-word"></div>
-        </form>
-
-        <div class="alphabet"> <br></div>
-        <div class="wrong"></div>
-        <div class="right"></div>     
-
+    <div class="hangman">
+        <h1>Hangman!</h1>
+        <div class="playerOne"></div>
+        <div class="playerTwo"></div>
     </div>
+    <script src="./lib/jquery-3.2.1.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
