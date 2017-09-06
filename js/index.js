@@ -5,7 +5,7 @@ $(document).ready(function () {
     var pickWord = '<p>player 1 choose your word</p><input type="text" class="word" id="word" value="'+ word +'"> <button type="submit" class="submit" id="target">Click!</button></form>';
     var alphabetstring = 'abcdefghijklmnopqrstuvwxyz'.split('');
     var lives = 'xxxxxx'.split('');
-    var live = '<br> <p>you currently have '+ lives +' lives remaining</p>';
+    
     function alphabet() { 
         for (var i = 0; i < alphabetstring.length; i++) {
             var letter = alphabetstring[i];
@@ -36,7 +36,7 @@ $(document).ready(function () {
     //---------------------------------------------------------//
             // show all the letters of the alphabet as buttons
             alphabet()
-            $('.playerTwo').append(live);
+            
             $('.refresh').append(refresh)
             // display and then hide the word that player1 typed with css
             $('.playerTwoWord').append(word).html(function(index, html) {
@@ -61,7 +61,7 @@ $(document).ready(function () {
                     
                     // this next code block needs to be repeated for every letter that is the same
                     if (buttonclicked = $span.hasClass('selected')) {
-                        $($span).removeClass("selected");
+                        $span.removeClass("selected");
                         console.log('i ran');
                     } 
                      

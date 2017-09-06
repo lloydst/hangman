@@ -10,16 +10,18 @@
 .playerTwo button {
     width: 40px;
     height: 40px;
-    border-radius: 3px;
+    border-radius: 20px;
     background-color: green;
 }
 .playerTwo button:disabled {
     width: 40px;
     height: 40px;
     border-radius: 3px;
-    background-color: red;
-
+    background-color: gray;
 }
 .selected {
     color:lightblue;
+}
+.incorrect{
+    background-color: red;
 }
