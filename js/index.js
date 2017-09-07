@@ -14,6 +14,7 @@ $(document).ready(function () {
             $('.playerTwo').append(htmlalpabet);
         }
     };
+    var wrong = ' stokje';
     var refresh = '<input type="button" value="Restart game" onClick="window.location.reload()">';
     var playerguess = '<input class="guessWord" value="Guess the word"><button type="submit" class="submit" id="guessTarget">Click!</button>';
     
@@ -79,6 +80,7 @@ $(document).ready(function () {
                 } else {
                     // not a correct letter 
                     console.log('To bad '+ buttonclicked +' wasnt in the word chosen by player 1' )                 
+                    $('.theHangman').append(wrong);
                     
                     
                    
