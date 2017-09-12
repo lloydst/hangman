@@ -41,6 +41,8 @@ $(document).ready(function () {
                 // win requirement for guess the word
                 if (guess == word) {
                     alert('Victory!');
+                }else {
+                    $('.theHangman').append(wrong);
                 };
             });
 
