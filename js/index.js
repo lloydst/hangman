@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 $(document).ready(function () {
     //global vars and html to be injected
     
     var word = 'hithere';
-    var pickWord = '<p>player 1 choose your word</p><input type="text" class="word" id="word" value="'+ word +'"> <button type="submit" class="submit" id="target">Click!</button>';
+    var pickWord = '<p>player 1 choose your word</p><input type="password" class="word" id="word" placeholder="DON&#39;T LOOK PLAYER 2"> <button type="submit" class="submit" id="target">Click!</button>';
     var alphabetstring = 'abcdefghijklmnopqrstuvwxyz'.split('');
     var lives = 6;
     function alphabet() { 
@@ -15,6 +15,7 @@ $(document).ready(function () {
         }
     };
     var wrong = ' stokje';
+    var wrongs = 0;
     var refresh = '<input type="button" value="Restart game" onClick="window.location.reload()">';
     var playerguess = '<input class="guessWord" value="Guess the word"><button type="submit" class="submit" id="guessTarget">Click!</button>';
     
@@ -55,7 +56,7 @@ $(document).ready(function () {
             $('.refresh').append(refresh);
             // display and then hide the word that player1 typed with css
             $('.playerTwoWord').append(word).html(function(index, html) {
-                return html.replace(/\S/g, '<span id="$&" class="selected">$&</span>');
+                return html.replace(/\S/g, '<span class="selected $&">$&</span>');
             });
             
             // .split() word and compare with buttons being pressed by player 2
@@ -70,26 +71,36 @@ $(document).ready(function () {
                     // logic for succes
                     // set the color of the span that has the same inner html as buttonclicked to black
                     
-                    var $span = $('#'+ buttonclicked +'');
+                    var $span = $('.'+ buttonclicked +'');
                                         
-                    do {
+                    if(buttonclicked = $span.hasClass('selected')){
                         //$span.removeClass("selected");
-                        $span.attr('id', null);
-                        $span.attr('class',null);
+                        $span.removeClass('selected');
+
+                        setTimeout(function() { 
+                            if($('span').hasClass("selected") == false){
+                                alert("You won! \n Switch players and choose a new word"); 
+                                window.location.reload();
+                            }
+                        }, 1);
                         
-                    } while (buttonclicked = $span.hasClass('selected'));
+                    }
+                    
                     
                 } else {
-                    // not a correct letter 
-                    console.log('To bad '+ buttonclicked +' wasnt in the word chosen by player 1' )                 
+                    // not a correct letter                  
                     $('.theHangman').append(wrong);
-                    
-                    
-                   
-                     
-                };
+                    var allWrongs = wrongs + 1;
+                    wrongs = allWrongs;
+                    if (wrongs == 6 ) {
+                        alert("You lost! \n Switch players and choose a new word");
+                        window.location.reload();
+                    }
 
+                };
+                
             });
-    }); // end of target anything where playerOne's word is needed needs to be above this!
- 
+            
+    }); // end of target, anything where playerOne's word is needed needs to be above this!
+    
 })
